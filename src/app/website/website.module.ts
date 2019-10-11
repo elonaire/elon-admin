@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { WebsiteComponent } from './website.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [WebsiteComponent],
+  exports: [WebsiteComponent],
   imports: [
     CommonModule
   ]

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MailComponent } from './mail.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [MailComponent],
+  exports: [MailComponent],
   imports: [
     CommonModule
   ]
