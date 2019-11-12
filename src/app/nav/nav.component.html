@@ -1,1 +1,24 @@
-<p>nav works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>elonaire</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink=""><mat-icon>speed</mat-icon>Dashboard</a>
+      <a mat-list-item routerLink="blog"><mat-icon>library_books</mat-icon>Blog</a>
+      <a mat-list-item routerLink="website"><mat-icon>web</mat-icon>Website</a>
+      <a mat-list-item routerLink="mail"><mat-icon>email</mat-icon>Mail</a>
+    </mat-nav-list>
+    <app-nav-footer></app-nav-footer>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>elonaire admin panel</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

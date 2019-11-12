@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavComponent } from './nav.component';
 
+import { NavRoutingModule } from './nav-routing.module';
+import { NavComponent } from './nav.component';
+import { MaterialModule } from '../material/material.module';
+import { NavFooterComponent } from './nav-footer/nav-footer.component';
 
 
 @NgModule({
-  declarations: [NavComponent],
-  exports: [NavComponent],
+  declarations: [NavComponent, NavFooterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NavRoutingModule,
+    MaterialModule
   ]
 })
 export class NavModule { }
