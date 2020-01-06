@@ -8,6 +8,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { NavComponent } from './nav.component';
+import { NavFooterComponent } from './nav-footer/nav-footer.component';
+import { RouterModule } from '@angular/router';
+import { AppModule } from '../app.module';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -15,7 +18,7 @@ describe('NavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NavComponent],
+      declarations: [NavComponent, NavFooterComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
@@ -24,6 +27,8 @@ describe('NavComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        RouterModule,
+        AppModule
       ]
     }).compileComponents();
   }));
